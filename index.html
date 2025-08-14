@@ -19,6 +19,12 @@
     <style>
         * {
             font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            overflow-x: hidden;
+            max-width: 100vw;
         }
         
         body {
@@ -87,36 +93,6 @@
             backdrop-filter: blur(30px);
             border: 1px solid rgba(0, 0, 0, 0.05);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            min-height: 56px;
-        }
-        
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-shrink: 0;
-        }
-        
-        .nav-center {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            flex-grow: 1;
-            justify-content: center;
-        }
-        
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-shrink: 0;
         }
         
         .btn-primary {
@@ -204,7 +180,7 @@
         }
         
         .logo-fox {
-            height: 24px;
+            height: 20px;
             width: auto;
         }
         
@@ -212,78 +188,208 @@
             padding: 6rem 0;
         }
         
-        /* Mobile Styles */
+        /* Desktop Sprites */
+        @media (min-width: 769px) {
+            .sprite-main-cat {
+                width: 120px;
+                height: 120px;
+                left: 12%;
+                top: 25%;
+            }
+            
+            .sprite-main-dog {
+                width: 140px;
+                height: 140px;
+                right: 10%;
+                top: 35%;
+            }
+            
+            .sprite-small {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .sprite-toggle {
+                bottom: 30px;
+                right: 30px;
+            }
+        }
+        
+        /* Mobile Optimizations */
         @media (max-width: 768px) {
-            .floating-sprite {
-                width: 50px !important;
-                height: 50px !important;
+            html, body {
+                overflow-x: hidden !important;
+                width: 100vw;
+                position: relative;
             }
             
-            .nav-center {
-                display: none;
+            * {
+                max-width: 100vw;
             }
             
-            .nav-container {
-                padding: 0 20px;
+            .container {
+                max-width: 100vw;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Navigation mobile */
+            .nav-mobile {
+                width: 100vw;
+                left: 0;
+                right: 0;
+                transform: none;
+                padding: 0 1rem;
+            }
+            
+            .nav-bar {
+                width: 100%;
+                padding: 1rem;
+                border-radius: 0;
+                margin: 0;
+            }
+            
+            .nav-container-mobile {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                gap: 0.5rem;
+            }
+            
+            .nav-logo-mobile {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                flex-shrink: 0;
+            }
+            
+            .nav-actions-mobile {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                flex-shrink: 0;
+            }
+            
+            /* Hero mobile */
+            .hero-mobile {
+                padding: 2rem 1rem;
+                text-align: center;
+                width: 100vw;
+                max-width: 100vw;
+            }
+            
+            .hero-title-mobile {
+                font-size: 2.5rem;
+                line-height: 0.9;
+                margin-bottom: 1rem;
+                word-break: break-word;
+            }
+            
+            .hero-subtitle-mobile {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-desc-mobile {
+                font-size: 0.875rem;
+                line-height: 1.4;
+                margin-bottom: 2rem;
+                max-width: 100%;
+            }
+            
+            /* Buttons mobile */
+            .buttons-mobile {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+            
+            .btn-mobile {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                width: 100%;
+                text-decoration: none;
+            }
+            
+            /* Features grid mobile */
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .feature-grid-mobile {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+                margin: 0 auto;
+            }
+            
+            .feature-card-mobile {
+                padding: 1rem;
+                text-align: center;
+                min-height: 120px;
+            }
+            
+            /* Section spacing */
+            .section-spacing {
+                padding: 3rem 0;
             }
             
             .mobile-spacing {
                 padding: 1rem;
             }
             
+            /* Typography mobile */
+            .mobile-h1 {
+                font-size: 2.5rem;
+                line-height: 0.9;
+            }
+            
+            .mobile-h2 {
+                font-size: 2rem;
+                line-height: 1.1;
+            }
+            
             .mobile-text {
-                font-size: 0.9rem;
+                font-size: 0.875rem;
                 line-height: 1.4;
             }
             
-            .hero-title-mobile {
-                font-size: 3rem;
-                line-height: 0.9;
-                margin-bottom: 1rem;
+            /* Sprite toggle mobile */
+            .sprite-toggle {
+                bottom: 20px;
+                right: 20px;
+                padding: 8px 16px;
+                font-size: 12px;
             }
             
-            .hero-subtitle-mobile {
-                font-size: 1.1rem;
-                margin-bottom: 1rem;
+            .sprite-toggle span {
+                display: none;
             }
             
-            .hero-desc-mobile {
+            /* FAQ mobile */
+            .faq-summary-mobile {
                 font-size: 0.9rem;
-                margin-bottom: 2rem;
-                max-width: 100%;
+                padding: 1rem;
             }
             
-            .section-spacing {
-                padding: 3rem 0;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .sprite-main-cat {
-                width: 150px;
-                height: 150px;
-                left: 15%;
-                top: 25%;
-            }
-            
-            .sprite-main-dog {
-                width: 250px;
-                height: 250px;
-                right: 12%;
-                top: 35%;
-            }
-            
-            .sprite-small {
-                width: 70px;
-                height: 70px;
+            .faq-content-mobile {
+                font-size: 0.85rem;
+                padding: 0 1rem 1rem 1rem;
             }
         }
         
         /* Sprite control button */
         .sprite-toggle {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
             z-index: 100;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -303,57 +409,73 @@
     </style>
 </head>
 <body class="antialiased">
-    <!-- Floating Sprites - Optimized for desktop -->
+    <!-- Floating Sprites - Desktop only -->
     <div class="hidden md:block">
-        <!-- Main sprites - larger and well positioned -->
         <img src="gray-catWalk.png" alt="" class="floating-sprite sprite-main-cat draggable">
         <img src="orange-dog-Walk.png" alt="" class="floating-sprite sprite-main-dog draggable">
-        
-        <!-- Small decorative sprites -->
-        <img src="orange-dog-Jump.png" alt="" class="floating-sprite sprite-small draggable" style="left: 8%; top: 60%;">
-        <img src="gray-cat-Jump.png" alt="" class="floating-sprite sprite-small draggable" style="right: 8%; top: 70%;">
+        <img src="orange-dog-Jump.png" alt="" class="floating-sprite sprite-small draggable" style="left: 6%; top: 60%;">
+        <img src="gray-cat-Jump.png" alt="" class="floating-sprite sprite-small draggable" style="right: 6%; top: 70%;">
     </div>
 
-    <!-- Mobile sprites - smaller -->
+    <!-- Mobile sprites - smaller and positioned safely -->
     <div class="block md:hidden">
-        <img src="gray-catWalk.png" alt="" class="floating-sprite" style="left: 10%; top: 20%; width: 50px; height: 50px;">
-        <img src="orange-dog-Walk.png" alt="" class="floating-sprite" style="right: 10%; top: 30%; width: 50px; height: 50px;">
-        <img src="orange-dog-Jump.png" alt="" class="floating-sprite" style="left: 15%; top: 60%; width: 40px; height: 40px;">
-        <img src="gray-cat-Jump.png" alt="" class="floating-sprite" style="right: 15%; top: 70%; width: 40px; height: 40px;">
+        <img src="gray-catWalk.png" alt="" class="floating-sprite" style="left: 5%; top: 15%; width: 40px; height: 40px;">
+        <img src="orange-dog-Walk.png" alt="" class="floating-sprite" style="right: 5%; top: 25%; width: 40px; height: 40px;">
+        <img src="orange-dog-Jump.png" alt="" class="floating-sprite" style="left: 5%; top: 60%; width: 35px; height: 35px;">
+        <img src="gray-cat-Jump.png" alt="" class="floating-sprite" style="right: 5%; top: 70%; width: 35px; height: 35px;">
     </div>
 
     <!-- Sprite Toggle Button -->
     <button class="sprite-toggle" id="spriteToggle">
         <i data-lucide="eye" class="w-4 h-4 inline-block mr-2"></i>
-        <span>Masquer sprites</span>
+        <span>Masquer</span>
     </button>
 
-    <!-- Navigation - Fixed layout -->
-    <nav class="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
+    <!-- Navigation - Desktop -->
+    <nav class="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4 hidden md:block">
         <div class="nav-bar rounded-full px-8 py-3">
-            <div class="nav-container">
-                <!-- Logo -->
-                <div class="nav-logo">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3 flex-shrink-0">
                     <img src="logo-fox-dark.png" alt="Fox Logo" class="logo-fox">
                     <span class="font-semibold text-lg whitespace-nowrap">Minou</span>
                 </div>
                 
-                <!-- Center Navigation -->
-                <div class="nav-center">
-                    <a href="#features" class="text-sm font-medium hover:text-black transition-colors whitespace-nowrap">Fonctionnalités</a>
-                    <a href="#screenshots" class="text-sm font-medium hover:text-black transition-colors whitespace-nowrap">Aperçus</a>
-                    <a href="#faq" class="text-sm font-medium hover:text-black transition-colors whitespace-nowrap">FAQ</a>
+                <div class="flex items-center gap-8 flex-grow justify-center">
+                    <a href="#features" class="text-sm font-medium hover:text-black transition-colors">Fonctionnalités</a>
+                    <a href="#screenshots" class="text-sm font-medium hover:text-black transition-colors">Aperçus</a>
+                    <a href="#faq" class="text-sm font-medium hover:text-black transition-colors">FAQ</a>
                 </div>
                 
-                <!-- Actions -->
-                <div class="nav-actions">
-                    <a href="https://github.com/Tiger-Foxx/minou" target="_blank" class="btn-secondary rounded-full px-4 py-2 text-sm font-medium flex items-center gap-2 whitespace-nowrap">
-                        <i data-lucide="github" class="w-4 h-4 flex-shrink-0"></i>
-                        <span class="hidden sm:inline">Code</span>
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <a href="https://github.com/Tiger-Foxx/minou" target="_blank" class="btn-secondary rounded-full px-4 py-2 text-sm font-medium flex items-center gap-2">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                        Code
                     </a>
-                    <a href="https://github.com/Tiger-Foxx/minou/releases/download/desktop/Minou_Setup.exe" class="btn-primary rounded-full px-6 py-2 text-sm font-medium text-white flex items-center gap-2 whitespace-nowrap">
-                        <i data-lucide="download" class="w-4 h-4 flex-shrink-0"></i>
-                        <span class="hidden sm:inline">Télécharger</span>
+                    <a href="https://github.com/Tiger-Foxx/minou/releases/download/desktop/Minou_Setup.exe" class="btn-primary rounded-full px-6 py-2 text-sm font-medium text-white flex items-center gap-2">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        Télécharger
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navigation - Mobile -->
+    <nav class="fixed top-0 nav-mobile z-50 block md:hidden">
+        <div class="nav-bar">
+            <div class="nav-container-mobile">
+                <div class="nav-logo-mobile">
+                    <img src="logo-fox-dark.png" alt="Fox Logo" class="logo-fox">
+                    <span class="font-semibold text-base">Minou</span>
+                </div>
+                
+                <div class="nav-actions-mobile">
+                    <a href="https://github.com/Tiger-Foxx/minou" target="_blank" class="btn-secondary rounded-full px-3 py-2 text-xs font-medium flex items-center gap-1">
+                        <i data-lucide="github" class="w-3 h-3"></i>
+                    </a>
+                    <a href="https://github.com/Tiger-Foxx/minou/releases/download/desktop/Minou_Setup.exe" class="btn-primary rounded-full px-4 py-2 text-xs font-medium text-white flex items-center gap-1">
+                        <i data-lucide="download" class="w-3 h-3"></i>
+                        <span>Télécharger</span>
                     </a>
                 </div>
             </div>
@@ -361,9 +483,9 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="container mx-auto px-6 max-w-6xl pt-32">
-            <!-- By Fox -->
+    <section class="min-h-screen flex items-center justify-center relative">
+        <!-- Desktop Hero -->
+        <div class="container mx-auto px-6 max-w-6xl pt-32 hidden md:block">
             <div class="text-center mb-12">
                 <div class="flex items-center justify-center gap-2 text-sm text-gray-500">
                     <span>by</span>
@@ -373,22 +495,15 @@
             </div>
 
             <div class="grid lg:grid-cols-5 gap-12 items-center">
-                <!-- Left Column - Content -->
                 <div class="lg:col-span-3 text-center lg:text-left">
-                    <h1 class="text-8xl md:text-9xl font-black mb-6 gradient-text leading-none hero-title-mobile">
-                        Minou
-                    </h1>
+                    <h1 class="text-8xl md:text-9xl font-black mb-6 gradient-text leading-none">Minou</h1>
                     
-                    <div class="mb-8 hero-subtitle-mobile">
-                        <p class="text-2xl font-bold mb-2">
-                            "It's (Almost) Useless… But Adorable!"
-                        </p>
-                        <p class="text-lg text-gray-600 font-medium">
-                            "Completely Unnecessary… and Completely Cute."
-                        </p>
+                    <div class="mb-8">
+                        <p class="text-2xl font-bold mb-2">"It's (Almost) Useless… But Adorable!"</p>
+                        <p class="text-lg text-gray-600 font-medium">"Completely Unnecessary… and Completely Cute."</p>
                     </div>
 
-                    <p class="text-lg text-gray-700 mb-12 max-w-2xl hero-desc-mobile mobile-text">
+                    <p class="text-lg text-gray-700 mb-12 max-w-2xl">
                         Compagnon de bureau avec IA, personnalisable à l'infini. 
                         Donnez-lui un nom, réglez son comportement, ses sons, sa vitesse. 
                         Minou s'adapte parfaitement à vous.
@@ -399,14 +514,12 @@
                             <i data-lucide="download" class="w-5 h-5"></i>
                             Télécharger Windows
                         </a>
-                        
                         <a href="https://github.com/Tiger-Foxx/minou" target="_blank" class="btn-secondary rounded-full px-8 py-4 text-lg font-semibold flex items-center justify-center gap-3">
                             <i data-lucide="github" class="w-5 h-5"></i>
                             Voir le Code
                         </a>
                     </div>
 
-                    <!-- Quick Features -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto lg:mx-0">
                         <div class="feature-card rounded-2xl p-4 text-center">
                             <i data-lucide="user" class="w-5 h-5 mx-auto mb-2"></i>
@@ -427,8 +540,7 @@
                     </div>
                 </div>
 
-                <!-- Right Column - Screenshots -->
-                <div class="lg:col-span-2 hidden lg:block">
+                <div class="lg:col-span-2">
                     <div class="space-y-6">
                         <div class="screenshot-card rounded-3xl p-6">
                             <img src="cap2.png" alt="Interface de chat" class="w-full rounded-2xl">
@@ -447,80 +559,133 @@
                 </div>
             </div>
         </div>
+
+        <!-- Mobile Hero -->
+        <div class="hero-mobile block md:hidden pt-20">
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center gap-2 text-xs text-gray-500">
+                    <span>by</span>
+                    <img src="https://avatars.githubusercontent.com/u/118616410?v=4" alt="Fox avatar" class="w-4 h-4 rounded-full">
+                    <span class="font-medium">FOX</span>
+                </div>
+            </div>
+
+            <h1 class="hero-title-mobile mobile-h1 font-black gradient-text text-center">Minou</h1>
+            
+            <div class="hero-subtitle-mobile text-center">
+                <p class="text-lg font-bold mb-1">"It's (Almost) Useless… But Adorable!"</p>
+                <p class="text-sm text-gray-600 font-medium">"Completely Unnecessary… and Completely Cute."</p>
+            </div>
+
+            <p class="hero-desc-mobile mobile-text text-gray-700 text-center">
+                Compagnon de bureau avec IA, personnalisable à l'infini. 
+                Donnez-lui un nom, réglez comportement, sons, vitesse.
+            </p>
+
+            <div class="buttons-mobile">
+                <a href="https://github.com/Tiger-Foxx/minou/releases/download/desktop/Minou_Setup.exe" class="btn-mobile btn-primary text-white">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    <span>Télécharger Windows</span>
+                </a>
+                <a href="https://github.com/Tiger-Foxx/minou" target="_blank" class="btn-mobile btn-secondary">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    <span>Voir le Code</span>
+                </a>
+            </div>
+
+            <div class="feature-grid-mobile">
+                <div class="feature-card feature-card-mobile rounded-xl">
+                    <i data-lucide="user" class="w-4 h-4 mx-auto mb-2"></i>
+                    <p class="font-semibold text-xs">Personnalisable</p>
+                </div>
+                <div class="feature-card feature-card-mobile rounded-xl">
+                    <i data-lucide="brain" class="w-4 h-4 mx-auto mb-2"></i>
+                    <p class="font-semibold text-xs">IA Intégrée</p>
+                </div>
+                <div class="feature-card feature-card-mobile rounded-xl">
+                    <i data-lucide="zap" class="w-4 h-4 mx-auto mb-2"></i>
+                    <p class="font-semibold text-xs">Animations</p>
+                </div>
+                <div class="feature-card feature-card-mobile rounded-xl">
+                    <i data-lucide="volume-off" class="w-4 h-4 mx-auto mb-2"></i>
+                    <p class="font-semibold text-xs">Mode Silence</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Features Section -->
     <section id="features" class="section-spacing bg-gray-50">
-        <div class="container mx-auto px-6 max-w-6xl mobile-spacing">
-            <div class="text-center mb-16">
-                <h2 class="text-6xl font-black gradient-text mb-6">Fonctionnalités</h2>
-                <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-6xl font-black gradient-text mb-6">Fonctionnalités</h2>
+                <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mobile-text">
                     Construit pour le fun, utile parfois. Complètement personnalisable.
                 </p>
             </div>
 
             <div class="feature-grid">
-                <div class="feature-card rounded-3xl p-8 text-center">
-                    <div class="w-12 h-12 mx-auto mb-6 rounded-2xl bg-black flex items-center justify-center">
-                        <i data-lucide="user-cog" class="w-6 h-6 text-white"></i>
+                <div class="feature-card rounded-3xl p-6 md:p-8 text-center">
+                    <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 md:mb-6 rounded-2xl bg-black flex items-center justify-center">
+                        <i data-lucide="user-cog" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Personnalisation Totale</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">Personnalisation Totale</h3>
+                    <p class="text-gray-700 mobile-text">
                         Donnez-lui un nom unique, choisissez chat ou chien, 
                         réglez vitesse, fréquence, sons et comportements.
                     </p>
                 </div>
 
-                <div class="feature-card rounded-3xl p-8 text-center">
-                    <div class="w-12 h-12 mx-auto mb-6 rounded-2xl bg-black flex items-center justify-center">
-                        <i data-lucide="brain" class="w-6 h-6 text-white"></i>
+                <div class="feature-card rounded-3xl p-6 md:p-8 text-center">
+                    <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 md:mb-6 rounded-2xl bg-black flex items-center justify-center">
+                        <i data-lucide="brain" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">IA Conversationnelle</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">IA Conversationnelle</h3>
+                    <p class="text-gray-700 mobile-text">
                         Mode hors-ligne basique ou IA Gemini avancée pour 
                         conversations intelligentes et réponses précises.
                     </p>
                 </div>
 
-                <div class="feature-card rounded-3xl p-8 text-center">
-                    <div class="w-12 h-12 mx-auto mb-6 rounded-2xl bg-black flex items-center justify-center">
-                        <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                <div class="feature-card rounded-3xl p-6 md:p-8 text-center">
+                    <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 md:mb-6 rounded-2xl bg-black flex items-center justify-center">
+                        <i data-lucide="zap" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">8 Animations Fluides</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">8 Animations Fluides</h3>
+                    <p class="text-gray-700 mobile-text">
                         Repos, marche, course, saut, glissade, blessure, 
                         mort et chute. Mouvements réalistes et expressifs.
                     </p>
                 </div>
 
-                <div class="feature-card rounded-3xl p-8 text-center">
-                    <div class="w-12 h-12 mx-auto mb-6 rounded-2xl bg-black flex items-center justify-center">
-                        <i data-lucide="sticky-note" class="w-6 h-6 text-white"></i>
+                <div class="feature-card rounded-3xl p-6 md:p-8 text-center">
+                    <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 md:mb-6 rounded-2xl bg-black flex items-center justify-center">
+                        <i data-lucide="sticky-note" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Notes & Rappels</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">Notes & Rappels</h3>
+                    <p class="text-gray-700 mobile-text">
                         "Note que j'ai RDV demain" ou "Rappelle-moi dans 30 min". 
                         Sauvegarde locale sécurisée.
                     </p>
                 </div>
 
-                <div class="feature-card rounded-3xl p-8 text-center">
-                    <div class="w-12 h-12 mx-auto mb-6 rounded-2xl bg-black flex items-center justify-center">
-                        <i data-lucide="gamepad-2" class="w-6 h-6 text-white"></i>
+                <div class="feature-card rounded-3xl p-6 md:p-8 text-center">
+                    <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 md:mb-6 rounded-2xl bg-black flex items-center justify-center">
+                        <i data-lucide="gamepad-2" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Télécommande</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">Télécommande</h3>
+                    <p class="text-gray-700 mobile-text">
                         Interface moderne avec D-pad pour contrôler Minou 
                         manuellement : direction, saut, glissade.
                     </p>
                 </div>
 
-                <div class="feature-card rounded-3xl p-8 text-center">
-                    <div class="w-12 h-12 mx-auto mb-6 rounded-2xl bg-black flex items-center justify-center">
-                        <i data-lucide="volume-off" class="w-6 h-6 text-white"></i>
+                <div class="feature-card rounded-3xl p-6 md:p-8 text-center">
+                    <div class="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 md:mb-6 rounded-2xl bg-black flex items-center justify-center">
+                        <i data-lucide="volume-off" class="w-5 h-5 md:w-6 md:h-6 text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Mode Tranquille</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">Mode Tranquille</h3>
+                    <p class="text-gray-700 mobile-text">
                         Silence instantané : arrêt complet des mouvements, 
                         sons et interactions pour ne pas déranger.
                     </p>
@@ -531,33 +696,33 @@
 
     <!-- Screenshots Section -->
     <section id="screenshots" class="section-spacing">
-        <div class="container mx-auto px-6 max-w-6xl mobile-spacing">
-            <div class="text-center mb-16">
-                <h2 class="text-6xl font-black gradient-text mb-6">Aperçus</h2>
-                <p class="text-xl text-gray-700">Minou en action</p>
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-6xl font-black gradient-text mb-6">Aperçus</h2>
+                <p class="text-lg md:text-xl text-gray-700 mobile-text">Minou en action</p>
             </div>
 
             <div class="feature-grid">
-                <div class="screenshot-card rounded-3xl p-6">
-                    <img src="cap2.png" alt="Chat intelligent" class="w-full rounded-2xl mb-4">
+                <div class="screenshot-card rounded-3xl p-4 md:p-6">
+                    <img src="cap2.png" alt="Chat intelligent" class="w-full rounded-2xl mb-3 md:mb-4">
                     <h4 class="font-bold mb-2">Conversations Intelligentes</h4>
-                    <p class="text-sm text-gray-600">IA Gemini pour des réponses précises</p>
+                    <p class="text-sm text-gray-600 mobile-text">IA Gemini pour des réponses précises</p>
                 </div>
 
-                <div class="screenshot-card rounded-3xl p-6">
-                    <img src="cap1.png" alt="Bureau compagnon" class="w-full rounded-2xl mb-4">
+                <div class="screenshot-card rounded-3xl p-4 md:p-6">
+                    <img src="cap1.png" alt="Bureau compagnon" class="w-full rounded-2xl mb-3 md:mb-4">
                     <h4 class="font-bold mb-2">Compagnon de Bureau</h4>
-                    <p class="text-sm text-gray-600">Vit discrètement sur votre écran</p>
+                    <p class="text-sm text-gray-600 mobile-text">Vit discrètement sur votre écran</p>
                 </div>
 
-                <div class="feature-card rounded-3xl p-8 text-center">
-                    <div class="grid grid-cols-3 gap-3 mb-6">
+                <div class="feature-card rounded-3xl p-6 md:p-8 text-center">
+                    <div class="grid grid-cols-3 gap-2 md:gap-3 mb-4 md:mb-6">
                         <img src="orange-dog-Walk.png" alt="Dog" class="w-full rounded-lg">
                         <img src="gray-catWalk.png" alt="Cat" class="w-full rounded-lg">
                         <img src="orange-dog-Jump.png" alt="Jump" class="w-full rounded-lg">
                     </div>
                     <h4 class="font-bold mb-2">Sprites Animés</h4>
-                    <p class="text-sm text-gray-600">
+                    <p class="text-sm text-gray-600 mobile-text">
                         Collection complète d'animations pour chats et chiens
                     </p>
                 </div>
@@ -567,50 +732,50 @@
 
     <!-- FAQ Section -->
     <section id="faq" class="section-spacing bg-gray-50">
-        <div class="container mx-auto px-6 max-w-4xl mobile-spacing">
-            <div class="text-center mb-16">
-                <h2 class="text-6xl font-black gradient-text mb-6">FAQ</h2>
-                <p class="text-xl text-gray-700">Tout sur Minou</p>
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-6xl font-black gradient-text mb-6">FAQ</h2>
+                <p class="text-lg md:text-xl text-gray-700 mobile-text">Tout sur Minou</p>
             </div>
 
-            <div class="space-y-4">
+            <div class="space-y-3 md:space-y-4">
                 <details class="faq-item rounded-2xl">
-                    <summary class="flex items-center justify-between p-6 font-semibold">
-                        <span>Comment couper le son si Minou est trop bruyant ?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    <summary class="faq-summary-mobile flex items-center justify-between p-4 md:p-6 font-semibold">
+                        <span class="mobile-text">Comment couper le son si Minou est trop bruyant ?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 md:w-5 md:h-5 transition-transform flex-shrink-0"></i>
                     </summary>
-                    <div class="px-6 pb-6 text-gray-700">
-                        <p>Activez le <strong>Mode Tranquille</strong> depuis le menu pour un silence complet, ou désactivez simplement les sons dans les paramètres.</p>
+                    <div class="faq-content-mobile px-4 pb-4 md:px-6 md:pb-6 text-gray-700">
+                        <p class="mobile-text">Activez le <strong>Mode Tranquille</strong> depuis le menu pour un silence complet, ou désactivez simplement les sons dans les paramètres.</p>
                     </div>
                 </details>
 
                 <details class="faq-item rounded-2xl">
-                    <summary class="flex items-center justify-between p-6 font-semibold">
-                        <span>Comment personnaliser Minou complètement ?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    <summary class="faq-summary-mobile flex items-center justify-between p-4 md:p-6 font-semibold">
+                        <span class="mobile-text">Comment personnaliser Minou complètement ?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 md:w-5 md:h-5 transition-transform flex-shrink-0"></i>
                     </summary>
-                    <div class="px-6 pb-6 text-gray-700">
-                        <p>Dans les Paramètres : changez son nom, choisissez chat/chien, réglez vitesse, fréquence des mouvements, sons, et même sa personnalité !</p>
+                    <div class="faq-content-mobile px-4 pb-4 md:px-6 md:pb-6 text-gray-700">
+                        <p class="mobile-text">Dans les Paramètres : changez son nom, choisissez chat/chien, réglez vitesse, fréquence des mouvements, sons, et même sa personnalité !</p>
                     </div>
                 </details>
 
                 <details class="faq-item rounded-2xl">
-                    <summary class="flex items-center justify-between p-6 font-semibold">
-                        <span>Ça marche sur Linux/macOS ?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    <summary class="faq-summary-mobile flex items-center justify-between p-4 md:p-6 font-semibold">
+                        <span class="mobile-text">Ça marche sur Linux/macOS ?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 md:w-5 md:h-5 transition-transform flex-shrink-0"></i>
                     </summary>
-                    <div class="px-6 pb-6 text-gray-700">
-                        <p>Oui ! Clonez le repository GitHub et suivez les instructions d'installation Python. L'installateur Windows est juste plus pratique.</p>
+                    <div class="faq-content-mobile px-4 pb-4 md:px-6 md:pb-6 text-gray-700">
+                        <p class="mobile-text">Oui ! Clonez le repository GitHub et suivez les instructions d'installation Python. L'installateur Windows est juste plus pratique.</p>
                     </div>
                 </details>
 
                 <details class="faq-item rounded-2xl">
-                    <summary class="flex items-center justify-between p-6 font-semibold">
-                        <span>L'IA est obligatoire ?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    <summary class="faq-summary-mobile flex items-center justify-between p-4 md:p-6 font-semibold">
+                        <span class="mobile-text">L'IA est obligatoire ?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 md:w-5 md:h-5 transition-transform flex-shrink-0"></i>
                     </summary>
-                    <div class="px-6 pb-6 text-gray-700">
-                        <p>Non ! Minou fonctionne parfaitement hors-ligne avec des réponses de base. L'IA Gemini est optionnelle pour des conversations avancées.</p>
+                    <div class="faq-content-mobile px-4 pb-4 md:px-6 md:pb-6 text-gray-700">
+                        <p class="mobile-text">Non ! Minou fonctionne parfaitement hors-ligne avec des réponses de base. L'IA Gemini est optionnelle pour des conversations avancées.</p>
                     </div>
                 </details>
             </div>
@@ -618,25 +783,25 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-16 bg-black text-white">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="grid md:grid-cols-3 gap-12 mb-12">
+    <footer class="py-12 md:py-16 bg-black text-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
                 <!-- Logo & Description -->
                 <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <img src="logo.png" alt="Minou" class="w-10 h-10">
+                    <div class="flex items-center gap-3 mb-4 md:mb-6">
+                        <img src="logo.png" alt="Minou" class="w-8 h-8 md:w-10 md:h-10">
                         <div>
-                            <h3 class="text-2xl font-bold">Minou</h3>
-                            <p class="text-gray-400">by FOX</p>
+                            <h3 class="text-xl md:text-2xl font-bold">Minou</h3>
+                            <p class="text-gray-400 text-sm">by FOX</p>
                         </div>
                     </div>
-                    <p class="text-gray-300 mb-4">
+                    <p class="text-gray-300 mb-4 mobile-text">
                         "It's (Almost) Useless… But Adorable!" — Votre compagnon 
                         de bureau intelligent et complètement personnalisable.
                     </p>
                     <div class="flex items-center gap-3">
-                        <img src="https://avatars.githubusercontent.com/u/118616410?v=4" alt="Fox" class="w-8 h-8 rounded-full">
-                        <a href="https://site.the-fox.tech" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <img src="https://avatars.githubusercontent.com/u/118616410?v=4" alt="Fox" class="w-6 h-6 md:w-8 md:h-8 rounded-full">
+                        <a href="https://site.the-fox.tech" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm mobile-text">
                             site.the-fox.tech
                         </a>
                     </div>
@@ -644,26 +809,26 @@
 
                 <!-- Links -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Ressources</h4>
-                    <ul class="space-y-3">
-                        <li><a href="https://github.com/Tiger-Foxx/minou" target="_blank" class="text-gray-400 hover:text-white transition-colors">Repository GitHub</a></li>
-                        <li><a href="https://github.com/Tiger-Foxx/minou/blob/main/README.md" target="_blank" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
-                        <li><a href="https://github.com/Tiger-Foxx/minou/blob/main/userguide.md" target="_blank" class="text-gray-400 hover:text-white transition-colors">Guide Utilisateur</a></li>
-                        <li><a href="https://github.com/Tiger-Foxx/minou/issues" target="_blank" class="text-gray-400 hover:text-white transition-colors">Signaler un Bug</a></li>
+                    <h4 class="text-base md:text-lg font-semibold mb-4 md:mb-6">Ressources</h4>
+                    <ul class="space-y-2 md:space-y-3">
+                        <li><a href="https://github.com/Tiger-Foxx/minou" target="_blank" class="text-gray-400 hover:text-white transition-colors mobile-text">Repository GitHub</a></li>
+                        <li><a href="https://github.com/Tiger-Foxx/minou/blob/main/README.md" target="_blank" class="text-gray-400 hover:text-white transition-colors mobile-text">Documentation</a></li>
+                        <li><a href="https://github.com/Tiger-Foxx/minou/blob/main/userguide.md" target="_blank" class="text-gray-400 hover:text-white transition-colors mobile-text">Guide Utilisateur</a></li>
+                        <li><a href="https://github.com/Tiger-Foxx/minou/issues" target="_blank" class="text-gray-400 hover:text-white transition-colors mobile-text">Signaler un Bug</a></li>
                     </ul>
                 </div>
 
                 <!-- Download -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Téléchargement</h4>
-                    <a href="https://github.com/Tiger-Foxx/minou/releases/download/desktop/Minou_Setup.exe" class="btn-primary rounded-2xl px-6 py-3 text-sm font-semibold text-white flex items-center justify-center gap-2 w-full mb-4">
-                        <i data-lucide="download" class="w-4 h-4"></i>
+                    <h4 class="text-base md:text-lg font-semibold mb-4 md:mb-6">Téléchargement</h4>
+                    <a href="https://github.com/Tiger-Foxx/minou/releases/download/desktop/Minou_Setup.exe" class="btn-primary rounded-2xl px-4 md:px-6 py-2 md:py-3 text-sm font-semibold text-white flex items-center justify-center gap-2 w-full mb-3 md:mb-4">
+                        <i data-lucide="download" class="w-3 h-3 md:w-4 md:h-4"></i>
                         Windows Installer
                     </a>
-                    <p class="text-gray-400 text-sm">
+                    <p class="text-gray-400 text-xs md:text-sm mobile-text">
                         Pour Linux/macOS : clonez le repository
                     </p>
-                    <div class="mt-6">
+                    <div class="mt-4 md:mt-6">
                         <p class="text-xs text-gray-500">
                             Version 2.0.1 • Août 2025
                         </p>
@@ -671,16 +836,16 @@
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-400 text-sm">
+            <div class="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
+                <p class="text-gray-400 text-xs md:text-sm mobile-text">
                     © 2025 Tiger-Foxx. Licence MIT.
                 </p>
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3 md:gap-4">
                     <a href="https://github.com/Tiger-Foxx" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                        <i data-lucide="github" class="w-5 h-5"></i>
+                        <i data-lucide="github" class="w-4 h-4 md:w-5 md:h-5"></i>
                     </a>
                     <span class="text-gray-600">•</span>
-                    <span class="text-gray-400 text-sm">Fait avec ❤️ par FOX</span>
+                    <span class="text-gray-400 text-xs md:text-sm mobile-text">Fait avec ❤️ par FOX</span>
                 </div>
             </div>
         </div>
@@ -712,21 +877,25 @@
             });
         });
 
-        // Smart navbar hide/show
+        // Smart navbar hide/show (desktop only)
         let lastScrollY = window.scrollY;
-        const nav = document.querySelector('nav');
+        const nav = document.querySelector('nav.hidden.md\\:block');
         
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > lastScrollY && window.scrollY > 100) {
-                nav.style.transform = 'translate(-50%, -100%)';
-            } else {
-                nav.style.transform = 'translate(-50%, 0)';
-            }
-            lastScrollY = window.scrollY;
-        });
+        if (nav) {
+            window.addEventListener('scroll', () => {
+                if (window.innerWidth >= 768) {
+                    if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                        nav.style.transform = 'translate(-50%, -100%)';
+                    } else {
+                        nav.style.transform = 'translate(-50%, 0)';
+                    }
+                }
+                lastScrollY = window.scrollY;
+            });
+        }
 
         // Download tracking
-        document.querySelectorAll('a[href*="minou-setup.exe"]').forEach(link => {
+        document.querySelectorAll('a[href*="Minou_Setup.exe"]').forEach(link => {
             link.addEventListener('click', function() {
                 console.log('Download started:', this.href);
             });
@@ -737,34 +906,36 @@
         const sprites = document.querySelectorAll('.floating-sprite');
         let spritesVisible = true;
 
-        spriteToggle.addEventListener('click', function() {
-            spritesVisible = !spritesVisible;
-            
-            sprites.forEach(sprite => {
+        if (spriteToggle) {
+            spriteToggle.addEventListener('click', function() {
+                spritesVisible = !spritesVisible;
+                
+                sprites.forEach(sprite => {
+                    if (spritesVisible) {
+                        sprite.style.opacity = '1';
+                        sprite.style.pointerEvents = 'all';
+                    } else {
+                        sprite.style.opacity = '0';
+                        sprite.style.pointerEvents = 'none';
+                    }
+                });
+                
+                const icon = this.querySelector('i');
+                const text = this.querySelector('span');
+                
                 if (spritesVisible) {
-                    sprite.style.opacity = '1';
-                    sprite.style.pointerEvents = 'all';
+                    icon.setAttribute('data-lucide', 'eye');
+                    if (text) text.textContent = 'Masquer';
                 } else {
-                    sprite.style.opacity = '0';
-                    sprite.style.pointerEvents = 'none';
+                    icon.setAttribute('data-lucide', 'eye-off');
+                    if (text) text.textContent = 'Afficher';
                 }
+                
+                lucide.createIcons();
             });
-            
-            const icon = this.querySelector('i');
-            const text = this.querySelector('span');
-            
-            if (spritesVisible) {
-                icon.setAttribute('data-lucide', 'eye');
-                text.textContent = 'Masquer sprites';
-            } else {
-                icon.setAttribute('data-lucide', 'eye-off');
-                text.textContent = 'Afficher sprites';
-            }
-            
-            lucide.createIcons();
-        });
+        }
 
-        // Drag and drop functionality for sprites
+        // Drag and drop functionality for sprites (desktop only)
         let isDragging = false;
         let currentSprite = null;
         let offsetX = 0;
@@ -772,7 +943,7 @@
 
         sprites.forEach(sprite => {
             sprite.addEventListener('mousedown', function(e) {
-                if (e.button === 0) { // Left mouse button
+                if (e.button === 0 && window.innerWidth >= 769) {
                     isDragging = true;
                     currentSprite = this;
                     this.classList.add('dragging');
@@ -787,7 +958,7 @@
         });
 
         document.addEventListener('mousemove', function(e) {
-            if (isDragging && currentSprite) {
+            if (isDragging && currentSprite && window.innerWidth >= 769) {
                 const x = e.clientX - offsetX;
                 const y = e.clientY - offsetY;
                 
